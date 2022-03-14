@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" lang="jp-"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link href="https://use.fontawesome.com/releases/v5.11.0/css/all.css" rel="stylesheet">
+
+    <link rel="shortcut icon" type="image/png" href="../images/favicon2.png">
+
+    <title>AnimeSite</title>
+
+</head>
+    <body>
+        <h2>List Film from StudioGhibli</h2>
+            <div class="container">
+                <div class="row ">
+                    <table class="table table-bordered" >
+                        <tr>
+                            <td>Id</td>
+                            <td>Title Film</td>
+                            <td>Original title</td>
+                        </tr>
+                        
+                        <tr th:each="item : ${films}">
+                            <td><label th:text="${item.id}"></label></td>
+                            <td th:text="${item.getTitle()}"></td>
+                            <td th:text="${item.getOriginal_title()}"></td>
+                        </tr>
+                    </table>
+                    <div class="col-sm-4 p-t-40 ">
+
+<!--                        <div class="thumbnail ">
+                            <a th:href="@{/id(id=${item.id})}"><span th:text="${item.title}" /></a>
+                            <h5 ></h5>
+                        </div>-->
+                    </div>
+                    </div>
+
+                </div>
+    </body>
+</html>
